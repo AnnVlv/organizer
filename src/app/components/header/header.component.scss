@@ -1,0 +1,23 @@
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  font-weight: bold;
+
+  .date {
+    margin: 0 20%;
+  }
+
+  .icon {
+    cursor: pointer;
+
+    &:hover {
+      color: grey;
+    }
+
+    &:active {
+      color: blue;
+    }
+  }
+}

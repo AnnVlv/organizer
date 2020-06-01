@@ -1,0 +1,13 @@
+<header>
+  <div class="icon" (click)="changeMonth(-1)">
+    <i class="material-icons">arrow_left</i>
+  </div>
+  <div class="date">
+    <span>
+      {{date$ | async | moment:'MMM, YYYY'}}
+    </span>
+  </div>
+  <div class="icon" (click)="changeMonth(1)">
+    <i class="material-icons">arrow_right</i>
+  </div>
+</header>

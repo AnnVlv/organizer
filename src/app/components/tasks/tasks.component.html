@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="date">Tasks for {{date$ | async | moment:'DD.MM.YYYY'}}</div>
+
+  <div class="tasks" *ngIf="tasks; else loadingBlock">
+    <div *ngIf="tasks.length; else emptyBlock">
+      <div class="task" *ngFor="let task of tasks; let i = index">
+        <div>#{{i + 1}} {{task.title}}</div>
+        <div class="delete-wrapper"><span (click)="deleteTask(task.id)">Delete</span></div>
+      </div>
+    </div>
+
+    <ng-template #emptyBlock>
+      <p>No tasks.</p>
+    </ng-template>
+  </div>
+
+  <div class="new-task">
+    <input [(ngModel)]="newTaskText" placeholder="New task...">
+    <button
+      (click)="addTask()"
+      [class.disabled]="!newTaskText"
+      [disabled]="!newTaskText"
+    >
+      Add
+    </button>
+  </div>
+
+  <ng-template #loadingBlock>
+    <p>Loading...</p>
+  </ng-template>
+</div>

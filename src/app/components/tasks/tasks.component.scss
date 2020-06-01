@@ -1,0 +1,51 @@
+.container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px 0;
+
+  .date {
+    margin: 25px 0;
+  }
+
+  .tasks {
+    .task {
+      padding: 12px;
+      border: 1px solid grey;
+      border-bottom: 0;
+      display: flex;
+      justify-content: space-between;
+
+      &:last-of-type {
+        border-bottom: 1px solid grey;
+      }
+
+      span {
+        color: red;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .new-task {
+    padding: 20px 0;
+
+    input {
+      padding: 12px;
+      width: 25%;
+    }
+  }
+}
+
+button {
+  background: grey;
+  border: grey;
+  color: #FFFFFF;
+  cursor: pointer;
+  padding: 12px;
+  width: 25%;
+  margin-left: 20px;
+
+  &.disabled {
+    cursor: not-allowed;
+  }
+}
